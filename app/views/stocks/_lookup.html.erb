@@ -29,10 +29,11 @@
           <% else %>
             <% if current_user.stock_already_added?(@stock.ticker) %>
             this stock
+            <% else %>
+              <% if current_user.stock_already_added?(@stock.ticker) %>
+              including this stock
+              <% end %>
             <% end %>
-          <% end %>
-          <% if current_user.stock_already_added?(@stock.ticker) %>
-            including this stock
           <% end %>
         </span>
       <% end %>
